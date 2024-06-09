@@ -1,18 +1,16 @@
-// H - TASK
+// H2 - TASK
 
-let a: number[];
+let b: string;
 
-function plus(a: number[]) {
-    const musbat: number[] = [];
-    for (let i = 0; i <=a.length; i++) {
-        if(a[i] > 0) {
-            musbat.push(a[i]);
+function faqatRaqam(b: string): string {
+    const raqam: string[] = [];
+    const a = b.split("");
+    for( let  i = 0; i <= a.length; i++) {
+        if(!isNaN(Number(a[i]))) {
+         raqam.push(a[i]);
         }
     }
-    const b =  musbat.toString();
-    // const b =  musbat.join("");
-    return b;
+    return raqam.join("");
 }
 
-console.log(plus([1, -7, 2, 3, 4, -9, 5, 6, -1, -5]));
-
+console.log(faqatRaqam("salom123qalesan?321"));
