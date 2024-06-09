@@ -11,7 +11,6 @@ function ikkiBolsaOchir(string: string): string {
     return result;
   }
   
-  // Test uchun misol
   console.log(ikkiBolsaOchir('arralayotganda'));
 
 // //  MIT TASK - ZD
