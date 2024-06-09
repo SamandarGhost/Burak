@@ -24,8 +24,8 @@ app.set("view engine", "ejs");
 
 
 /** 4 - ROUTERS**/ 
-app.use("/admin", routerAdmin);
-app.use("/", router); 
+app.use("/admin", routerAdmin);  // SSR: EJS
+app.use("/", router);            // SPA: REACT 
 
 
 

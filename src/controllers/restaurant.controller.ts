@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { T } from "../libs/types/common";
 
+// BSSR: EJS Project
+
 const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
     try{
