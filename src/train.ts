@@ -1,16 +1,11 @@
-// H2 - TASK
+/*  Project Standards
+        - Logging standards
+        - Naming standards
+            1. function, method, variable => CAMEL
+            2. class => PASCAL
+            3. folder => KEBAB
+            4.css => SNAKE
+        - Error handling
+          
 
-let b: string;
-
-function faqatRaqam(b: string): string {
-    const raqam: string[] = [];
-    const a = b.split("");
-    for( let  i = 0; i <= a.length; i++) {
-        if(!isNaN(Number(a[i]))) {
-         raqam.push(a[i]);
-        }
-    }
-    return raqam.join("");
-}
-
-console.log(faqatRaqam("salom123qalesan?321"));
+*/
