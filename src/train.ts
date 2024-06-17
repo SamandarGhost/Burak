@@ -1,23 +1,18 @@
-function engKopi(a: number[]): number | undefined {
-    const b: { [key: number]: number } = {};
-  
-    for (const num of a) {
-      b[num] = (b[num] || 0) + 1;
+// MIT TASK - J
+
+function engUzuni(a: string): string {
+  const lugat = a.split(' ');
+  let uzuni = '';
+
+  for (const soz of lugat) {
+    if (soz.length > uzuni.length) {
+      uzuni = soz;
     }
-  
-    let c = 0;
-    let eng: number | undefined;
-  
-    for (const key in b) {
-      if (b[key] > c) {
-        c = b[key];
-        eng = Number(key);
-      }
-    }
-  
-    return eng;
+  }
+  return uzuni;
 }
-console.log(engKopi([1, 2, 3, 0, 4, 5, 0, 6, 0, 7, 8, 9, 9, 9, 9, 9]));
+
+console.log(engUzuni("Hi I am SAMANDAR and I am 21 years old"));
 
 /*  Project Standards
         - Logging standards
