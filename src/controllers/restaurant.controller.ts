@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
-import { MemberInput } from "../libs/types/member";
+import { AdminRequest, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
 import { LoginInput } from "../libs/types/member";
 
@@ -38,31 +38,38 @@ restaurantController.getLogin = (req: Request, res: Response) => {
     }
 };
 
-restaurantController.processSignup = async (req: Request, res: Response) => {
+restaurantController.processSignup = async (req: AdminRequest, res: Response) => {
     try{
         console.log("processSignup");
         const newMember: MemberInput = req.body;
         newMember.memberType = MemberType.RESTAURANT;
-        //   TODO: SESSIONS AUTHENTICATION
-
-
         const result = await memberService.processSignup(newMember);
-        res.send(result);
+
+        req.session.member = result;
+        req.session.save(function() {
+            res.send(result);
+        });
+
+
     } catch (err) {
         console.log("Error on Signup Page:", err);
         res.send(err);
     }
 };
 
-restaurantController.processLogin = async (req: Request, res: Response) => {
+restaurantController.processLogin = async (req: AdminRequest, res: Response) => {
     try{
         console.log("processLogin");
         const input: LoginInput = req.body;
         const result = await memberService.processLogin(input);
-        //   TODO: SESSIONS AUTHENTICATION
+
+        req.session.member = result;
+        req.session.save(function() {
+            res.send(result);
+        });
 
 
-        res.send(result);
+
     } catch (err) {
         console.log("Error on Login Page:", err);
         res.send(err);
