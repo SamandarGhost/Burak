@@ -1,19 +1,22 @@
-// MIT TASK - J
+//  MIT TASK - K
 
-function engUzuni(a: string): string {
-  const lugat = a.split(' ');
-  let uzuni = '';
+function unlilar(str: string): number {
+  const unli = 'aeiou';
+  let count = 0;
 
-  for (const soz of lugat) {
-    if (soz.length > uzuni.length) {
-      uzuni = soz;
+  for (const ele of str.toLowerCase()) {
+    if (unli.includes(ele)) {
+      count++;
     }
   }
-  return uzuni;
+
+  return count;
 }
 
-console.log(engUzuni("Hi I am SAMANDAR and I am 21 years old"));
+console.log(unlilar("Salom Dunyo"));
 
+
+// Output: { this: 1, is: 1, a: 1, sample: 2, sentence: 3, with: 1, many: 1 }
 /*  Project Standards
         - Logging standards
         - Naming standards
