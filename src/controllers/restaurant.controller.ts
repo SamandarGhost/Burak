@@ -4,7 +4,8 @@ import MemberService from "../models/Member.service";
 import { AdminRequest, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
 import { LoginInput } from "../libs/types/member";
-import{ Message } from "../libs/Errors";
+import Errors, { Message } from "../libs/Errors";
+
 // BSSR: EJS Project
 
 const memberService = new MemberService();
@@ -14,9 +15,10 @@ restaurantController.goHome = (req: Request, res: Response) => {
     try{
         console.log("goHome");
         res.render("Home");
-        // send | json | redirect | end | render
+        // send | json | redirect | render
     } catch (err) {
         console.log("Error on Home Page:", err);
+        res.redirect("/admin");
     }
 };
 
@@ -26,6 +28,7 @@ restaurantController.getSignup = (req: Request, res: Response) => {
         res.render("Signup");
     } catch (err) {
         console.log("Error on Signup Page:", err);
+        res.redirect("/admin");
     }
 };
 
@@ -35,6 +38,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
         res.render("Login");
     } catch (err) {
         console.log("Error on Login Page:", err);
+        res.redirect("/admin");
     }
 };
 
@@ -53,6 +57,9 @@ restaurantController.processSignup = async (req: AdminRequest, res: Response) =>
 
     } catch (err) {
         console.log("Error on Signup Page:", err);
+        const message = 
+        err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
+           res.send(`<script> alert("${message}"); window.location.replace("admin/signup) </script>`);
         res.send(err);
     }
 };
@@ -72,7 +79,25 @@ restaurantController.processLogin = async (req: AdminRequest, res: Response) => 
 
     } catch (err) {
         console.log("Error on Login Page:", err);
+        const message = 
+            err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
+        res.send(`<script> alert("${message}"); window.location.replace("admin/login) </script>`);
         res.send(err);
+    }
+};
+
+restaurantController.logout = async (req: AdminRequest, res: Response) => {
+    try{
+        console.log("LogOut");
+        req.session.destroy(function() {
+            res.redirect("/admin");
+        })
+
+
+
+    } catch (err) {
+        console.log("Error on Login Page:", err);
+        res.redirect("/admin");
     }
 };
 

@@ -31,3 +31,13 @@ console.log(engUzuni("Hi I am SAMANDAR and I am 21 years old"));
     Rest API
     GraphQL API 
 */
+
+/*
+    Traditional API => SSR Adminka (Burak)
+    Rest API => SPA Burak Project
+*/
+
+/*
+even request join
+self destroyed
+*/
