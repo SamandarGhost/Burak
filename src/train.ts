@@ -1,19 +1,13 @@
-//  MIT TASK - K
+// MIT Task - L
 
-function unlilar(str: string): number {
-  const unli = 'aeiou';
-  let count = 0;
-
-  for (const ele of str.toLowerCase()) {
-    if (unli.includes(ele)) {
-      count++;
-    }
-  }
-
-  return count;
+function ongdanChapga(a: string): string {
+  return a.split(' ')
+  .map(soz => soz.split('')
+  .reverse().join(''))
+  .join(' ');
 }
 
-console.log(unlilar("Salom Dunyo"));
+console.log(ongdanChapga("Bugun yakshanba!"));
 
 
 // Output: { this: 1, is: 1, a: 1, sample: 2, sentence: 3, with: 1, many: 1 }
