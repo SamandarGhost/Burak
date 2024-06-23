@@ -29,18 +29,24 @@ console.log(unlilar("Salom Dunyo"));
 
 */
 
-/*
+/* Request: 
     Traditinal API
     Rest API
     GraphQL API 
 */
 
-/*
+/* Frontend Development: 
     Traditional API => SSR Adminka (Burak)
     Rest API => SPA Burak Project
 */
 
-/*
+/* Cookies: 
 even request join
 self destroyed
+*/
+
+/* Validation:
+    Frontend validation
+    Backend validation
+    Database validation
 */
