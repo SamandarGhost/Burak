@@ -1,13 +1,24 @@
-// MIT Task - L
+// MIT Task - M
+function ikkiKarra(arr: number[]): { [key: number]: number } {
+    const count: { [key: number]: number } = {};
+    arr.forEach((number) => {
+        if (count[number]) {
+            count[number]++;
+        } else {
+            count[number] = 1;
+        }
+    });
 
-function ongdanChapga(a: string): string {
-  return a.split(' ')
-  .map(soz => soz.split('')
-  .reverse().join(''))
-  .join(' ');
+    const kvadrant: { [key: number]: number } = {};
+    Object.keys(count).forEach((key) => {
+        kvadrant[parseInt(key)] = count[parseInt(key)] * count[parseInt(key)];
+    });
+
+    return kvadrant;
 }
 
-console.log(ongdanChapga("Bugun yakshanba!"));
+const son = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
+console.log(ikkiKarra(son));
 
 
 // Output: { this: 1, is: 1, a: 1, sample: 2, sentence: 3, with: 1, many: 1 }
