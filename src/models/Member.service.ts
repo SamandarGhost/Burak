@@ -60,12 +60,10 @@ public async login (input: LoginInput): Promise<Member> {
 
         try {
             const result = await this.memberModel.create(input);
-            // const tempResult = new this.memberModel(input);
-            // const result = await tempResult.save();
             result.memberPassword = "";
             return result;
     } catch (err) {
-        throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED)
+        throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
     }
     }
 
