@@ -20,8 +20,6 @@ function ikkiKarra(arr: number[]): { [key: number]: number } {
 const son = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
 console.log(ikkiKarra(son));
 
-
-// Output: { this: 1, is: 1, a: 1, sample: 2, sentence: 3, with: 1, many: 1 }
 /*  Project Standards
         - Logging standards
         - Naming standards
