@@ -97,12 +97,20 @@ restaurantController.logout = async (req: AdminRequest, res: Response) => {
         req.session.destroy(function() {
             res.redirect("/admin");
         })
-
-
-
     } catch (err) {
         console.log("Error on Login Page:", err);
         res.redirect("/admin");
+    }
+};
+
+restaurantController.getUsers = async (req: Request, res: Response) => {
+    try{
+        console.log("getUsers");
+        const result = await memberService.getUsers();
+        res.render("users", {users: result});
+    } catch (err) {
+        console.log("Error on GetUsers:", err);
+        res.redirect("/admin/login");
     }
 };
 
