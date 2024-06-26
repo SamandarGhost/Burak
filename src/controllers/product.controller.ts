@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import { T } from "../libs/types/common";
 import ProductService from "../models/Product.service";
-import { ProductInput } from "../libs/types/product";
+import { Product, ProductInput } from "../libs/types/product";
 import { AdminRequest } from "../libs/types/member";
 
 const productService = new ProductService();
@@ -16,7 +16,7 @@ const productController: T = {}
 productController.getAllProduct = async (req: Request, res: Response) => {
     try{
         console.log("getAllProduct");
-        const data = await productService.getAllProduct();
+        const data: Product[] = await productService.getAllProduct();
 
         res.render("products", {products: data});
     } catch (err) {
@@ -40,12 +40,12 @@ productController.createNewProduct = async (req: AdminRequest, res: Response) =>
 
         await productService.createNewProduct(data);
 
-        res.send(`<script> alert("Sucessful creation!"); window.location.replace("admin/product/all) </script>`);
+        res.send(`<script> alert("Sucessful creation!"); window.location.replace("/admin/product/all) </script>`);
     } catch (err) {
         console.log("Error, createNewProduct:", err);
         const message = 
         err instanceof Errors ? err.message: Message.SOMETHING_WENT_WRONG;
-        res.send(`<script> alert("${message}"); window.location.replace("admin/product/all) </script>`);
+        res.send(`<script> alert("${message}"); window.location.replace("/admin/product/all) </script>`);
     }
 };
 

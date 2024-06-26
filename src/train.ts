@@ -1,24 +1,36 @@
 // MIT Task - M
-function ikkiKarra(arr: number[]): { [key: number]: number } {
-    const count: { [key: number]: number } = {};
-    arr.forEach((number) => {
-        if (count[number]) {
-            count[number]++;
-        } else {
-            count[number] = 1;
-        }
-    });
-
-    const kvadrant: { [key: number]: number } = {};
-    Object.keys(count).forEach((key) => {
-        kvadrant[parseInt(key)] = count[parseInt(key)] * count[parseInt(key)];
-    });
-
-    return kvadrant;
+function a(array) {
+    let newarr:Object[] = [];
+    array.map( ele => {
+        newarr.push({
+            number: ele,
+            square: ele*ele,
+        })
+    })
+    return newarr;
 }
 
-const son = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
-console.log(ikkiKarra(son));
+console.log(a([1,2,3]));
+// function ikkiKarra(arr: number[]): { [key: number]: number } {
+//     const count: { [key: number]: number } = {};
+//     arr.forEach((number) => {
+//         if (count[number]) {
+//             count[number]++;
+//         } else {
+//             count[number] = 1;
+//         }
+//     });
+
+//     const kvadrant: { [key: number]: number } = {};
+//     Object.keys(count).forEach((key) => {
+//         kvadrant[parseInt(key)] = count[parseInt(key)] * count[parseInt(key)];
+//     });
+
+//     return kvadrant;
+// }
+
+// const son = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
+// console.log(ikkiKarra(son));
 
 /*  Project Standards
         - Logging standards
