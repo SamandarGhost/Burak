@@ -1,36 +1,10 @@
-// MIT Task - M
-function a(array) {
-    let newarr:Object[] = [];
-    array.map( ele => {
-        newarr.push({
-            number: ele,
-            square: ele*ele,
-        })
-    })
-    return newarr;
-}
+// MIT Taks - N
+function palindrom(a: string) {
+    const b = a.split("").reverse().join("");
+    return a === b;
+  }
 
-console.log(a([1,2,3]));
-// function ikkiKarra(arr: number[]): { [key: number]: number } {
-//     const count: { [key: number]: number } = {};
-//     arr.forEach((number) => {
-//         if (count[number]) {
-//             count[number]++;
-//         } else {
-//             count[number] = 1;
-//         }
-//     });
-
-//     const kvadrant: { [key: number]: number } = {};
-//     Object.keys(count).forEach((key) => {
-//         kvadrant[parseInt(key)] = count[parseInt(key)] * count[parseInt(key)];
-//     });
-
-//     return kvadrant;
-// }
-
-// const son = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
-// console.log(ikkiKarra(son));
+console.log(palindrom("true"));
 
 /*  Project Standards
         - Logging standards
