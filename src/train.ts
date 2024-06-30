@@ -19,7 +19,7 @@ console.log(palindrom("true"));
 */
 
 /* Request: 
-    Traditinal API
+    Traditinal API ( form POST )
     Rest API
     GraphQL API 
 */
