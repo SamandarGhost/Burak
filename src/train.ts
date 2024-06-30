@@ -1,10 +1,17 @@
-// MIT Taks - N
-function palindrom(a: string) {
-    const b = a.split("").reverse().join("");
-    return a === b;
-  }
+// MIT Taks - O
 
-console.log(palindrom("true"));
+function faqatRaqamniQosh(a: any[]) {
+    let hammasi = 0;
+    for (let b = 0; b < a.length; b++) {
+      if (typeof a[b] === 'number') {
+        hammasi += a[b];
+      }
+    }
+    return hammasi;
+  }
+  
+  console.log(faqatRaqamniQosh([10, "string", true, null, 20]));
+
 
 /*  Project Standards
         - Logging standards
