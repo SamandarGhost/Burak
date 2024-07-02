@@ -1,16 +1,10 @@
-// MIT Taks - O
+//  MIT TASK - P
 
-function faqatRaqamniQosh(a: any[]) {
-    let hammasi = 0;
-    for (let b = 0; b < a.length; b++) {
-      if (typeof a[b] === 'number') {
-        hammasi += a[b];
-      }
-    }
-    return hammasi;
-  }
-  
-  console.log(faqatRaqamniQosh([10, "string", true, null, 20]));
+function arrayga(obj: { [key: string]: any }): [string, any][] {
+  return Object.entries(obj);
+}
+
+console.log(arrayga({a: 10, b: 20})); 
 
 
 /*  Project Standards
