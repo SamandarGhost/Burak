@@ -1,10 +1,15 @@
-//  MIT TASK - P
+// MIT Task - Q
 
-function arrayga(obj: { [key: string]: any }): [string, any][] {
-  return Object.entries(obj);
-}
+function findKeyInObj(a: object, b: string): boolean {
+    for (let key in a) {
+        if (key === b) {
+            return true;
+        }
+      }
+        return false;
+    }
 
-console.log(arrayga({a: 10, b: 20})); 
+console.log(findKeyInObj({name: "Sam", age: 12}, "name"));
 
 
 /*  Project Standards
