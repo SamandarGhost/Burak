@@ -1,15 +1,11 @@
-// MIT Task - Q
+// MIT TASK - R
 
-function findKeyInObj(a: object, b: string): boolean {
-    for (let key in a) {
-        if (key === b) {
-            return true;
-        }
-      }
-        return false;
-    }
+function yigindi(a: string): number {
+  const [b, c] = a.split('+');
+  return parseInt(b) + parseInt(c);
+}
 
-console.log(findKeyInObj({name: "Sam", age: 12}, "name"));
+console.log(yigindi("1+2"));
 
 
 /*  Project Standards
