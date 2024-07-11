@@ -1,11 +1,18 @@
-// MIT TASK - R
+// MIT TASK - S
 
-function yigindi(a: string): number {
-  const [b, c] = a.split('+');
-  return parseInt(b) + parseInt(c);
+function yiqildi(a: number[]): number {
+    a.sort((a, b) => a - b);
+
+    for (let i: number = 0; i < a.length; i++) {
+        if (a[i] !== i + 1) {
+            return i + 1;
+        }
+    }
+
+    return a.length + 1;
 }
 
-console.log(yigindi("1+2"));
+console.log(yiqildi([1, 2, 3, 5]));
 
 
 /*  Project Standards
