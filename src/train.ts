@@ -1,18 +1,26 @@
-// MIT TASK - S
+// MIT TASK - T
 
-function yiqildi(a: number[]): number {
-    a.sort((a, b) => a - b);
+function tartibla(a1: number[], a2: number[]): number[] {
+    return [...a1, ...a2].sort((a, b) => a - b);
+  }
+ console.log(tartibla([1,4, 6], [2, 5, 9]));
 
-    for (let i: number = 0; i < a.length; i++) {
-        if (a[i] !== i + 1) {
-            return i + 1;
-        }
-    }
+ 
+// // MIT TASK - S
 
-    return a.length + 1;
-}
+// function yiqildi(a: number[]): number {
+//     a.sort((a, b) => a - b);
 
-console.log(yiqildi([1, 2, 3, 5]));
+//     for (let i: number = 0; i < a.length; i++) {
+//         if (a[i] !== i + 1) {
+//             return i + 1;
+//         }
+//     }
+
+//     return a.length + 1;
+// }
+
+// console.log(yiqildi([1, 2, 3, 5]));
 
 
 /*  Project Standards
