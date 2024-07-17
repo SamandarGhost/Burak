@@ -1,9 +1,23 @@
-// MIT TASK - T
+// MIT TASK - U 
 
-function tartibla(a1: number[], a2: number[]): number[] {
-    return [...a1, ...a2].sort((a, b) => a - b);
-  }
- console.log(tartibla([1,4, 6], [2, 5, 9]));
+function toqSon(a: number[]): number {
+    let son = 0;
+    for(let num of a) {
+        if (num % 2 !== 0) {
+            son++;
+        }
+    }
+    return son;
+}
+
+console.log(toqSon([1,2,3,4,5,6,7,8,9,10,11]));
+
+// // MIT TASK - T
+
+// function tartibla(a1: number[], a2: number[]): number[] {
+//     return [...a1, ...a2].sort((a, b) => a - b);
+//   }
+//  console.log(tartibla([1,4, 6], [2, 5, 9]));
 
  
 // // MIT TASK - S
