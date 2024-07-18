@@ -1,16 +1,16 @@
 // MIT TASK - U 
 
-function toqSon(a: number[]): number {
+function toqSon(a: number): number {
     let son = 0;
-    for(let num of a) {
-        if (num % 2 !== 0) {
+    for(let i = 0; i < a; i++) {
+        if ( i % 2 !== 0) {
             son++;
         }
     }
     return son;
 }
 
-console.log(toqSon([1,2,3,4,5,6,7,8,9,10,11]));
+console.log(toqSon(11));
 
 // // MIT TASK - T
 
