@@ -1,16 +1,30 @@
-// MIT TASK - U 
+// MIT TASK - W
 
-function toqSon(a: number): number {
-    let son = 0;
-    for(let i = 0; i < a; i++) {
-        if ( i % 2 !== 0) {
-            son++;
-        }
+function chunkArray(a:number[], n: number): number[][] {
+    const b:number[][] = [];
+    for (let i = 0; i < a.length; i += n) {
+        b.push(a.slice(i, i + n));
     }
-    return son;
+    return b;
 }
 
-console.log(toqSon(11));
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 2));
+
+
+
+// // MIT TASK - U 
+
+// function toqSon(a: number): number {
+//     let son = 0;
+//     for(let i = 0; i < a; i++) {
+//         if ( i % 2 !== 0) {
+//             son++;
+//         }
+//     }
+//     return son;
+// }
+
+// console.log(toqSon(11));
 
 // // MIT TASK - T
 
