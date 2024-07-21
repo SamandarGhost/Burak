@@ -28,7 +28,6 @@ memberController.signup = async (req: Request, res: Response) => {
         if(err instanceof Errors) res.status(err.code).json(err);
         else res.status(Errors.standard.code).json(Errors.standard);
         console.log("Error, signup:", err);
-        // res.json({});
     }
 };
 
@@ -39,7 +38,7 @@ memberController.signup = async (req: Request, res: Response) => {
               result = await memberService.login(input),
               token = await authService.createToken(result);
               
-            res.cookie("acesstoken", token, {maxAge: AUTH_TIMER * 3600 *1000,
+            res.cookie("accessToken", token, {maxAge: AUTH_TIMER * 3600 *1000,
                 httpOnly: false,
              });              
 
