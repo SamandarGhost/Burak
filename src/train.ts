@@ -1,14 +1,36 @@
-// MIT TASK - W
+// MIT TASK - X
 
-function chunkArray(a:number[], n: number): number[][] {
-    const b:number[][] = [];
-    for (let i = 0; i < a.length; i += n) {
-        b.push(a.slice(i, i + n));
+function sanaNechtaBor(obj: { [key: string]: any }, target: string): number {
+    let count = 0;
+  
+    function qidir(obj: { [key: string]: any }): void {
+      Object.keys(obj).forEach((key) => {
+        if (typeof obj[key] === 'object') {
+          qidir(obj[key]);
+        } else if (key === target || obj[key] === target) {
+          count++;
+        }
+      });
     }
-    return b;
-}
+  
+    qidir(obj);
+    return count;
+  }
 
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 2));
+  const obj = { model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } };
+  console.log(sanaNechtaBor(obj, 'model'));
+
+// // MIT TASK - W
+
+// function chunkArray(a:number[], n: number): number[][] {
+//     const b:number[][] = [];
+//     for (let i = 0; i < a.length; i += n) {
+//         b.push(a.slice(i, i + n));
+//     }
+//     return b;
+// }
+
+// console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 2));
 
 
 
