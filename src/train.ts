@@ -1,24 +1,32 @@
-// MIT TASK - X
+// MIT TASK - Y
+function findIntersection<T>(arr1: T[], arr2: T[]): T[] {
+  return arr1.filter(value => arr2.includes(value));
+}
 
-function sanaNechtaBor(obj: { [key: string]: any }, target: string): number {
-    let count = 0;
-  
-    function qidir(obj: { [key: string]: any }): void {
-      Object.keys(obj).forEach((key) => {
-        if (typeof obj[key] === 'object') {
-          qidir(obj[key]);
-        } else if (key === target || obj[key] === target) {
-          count++;
-        }
-      });
-    }
-  
-    qidir(obj);
-    return count;
-  }
+console.log(findIntersection([1,2,3], [3,2,0]));
 
-  const obj = { model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } };
-  console.log(sanaNechtaBor(obj, 'model'));
+
+// // MIT TASK - X
+
+// function sanaNechtaBor(obj: { [key: string]: any }, target: string): number {
+//     let count = 0;
+  
+//     function qidir(obj: { [key: string]: any }): void {
+//       Object.keys(obj).forEach((key) => {
+//         if (typeof obj[key] === 'object') {
+//           qidir(obj[key]);
+//         } else if (key === target || obj[key] === target) {
+//           count++;
+//         }
+//       });
+//     }
+  
+//     qidir(obj);
+//     return count;
+//   }
+
+//   const obj = { model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } };
+//   console.log(sanaNechtaBor(obj, 'model'));
 
 // // MIT TASK - W
 
