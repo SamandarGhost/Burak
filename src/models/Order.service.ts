@@ -36,8 +36,8 @@ class OrderService {
                 orderDelivery: delivery,
                 memberId: memberId,
             });
-            const orderId = member._id;
-            console.log("orderId:", member._id);
+            const orderId = newOrder._id;
+            console.log("orderId:", newOrder._id);
             await this.recordOrderItem(orderId, input);
 
             return newOrder;            
@@ -63,48 +63,40 @@ class OrderService {
     }
 
     public async getMyOrders(
-        member: Member, 
-        inquiry: OrderInquiry 
-    ): Promise<Order[]> {
+        member: Member,
+        inquery: OrderInquiry
+      ): Promise<Order[]> {
         const memberId = shapeIntoMongooseObjectId(member._id);
-        const matches = { memberId: memberId, orderStatus: inquiry.orderStatus };
-
+        const matches = { memberId: memberId, orderStatus: inquery.orderStatus };
+    
         const result = await this.orderModel
           .aggregate([
-            {$match: matches },
-            { $sort: {updatedAt: -1} },
-            { $skip: ( inquiry.page -1 ) * inquiry.limit },
-            { $limit: inquiry.limit },
+            { $match: matches },
+            { $sort: { updatedAt: -1 } },
+            { $skip: (inquery.page - 1) * inquery.limit },
+            { $limit: inquery.limit },
             {
-                $lookup: {
-                    from: "orderItems",
-                    localField: "_id",
-                    foreignField: "orderId",
-                    as: "orderItems",
-                },
+              $lookup: {
+                from: "orderItems",
+                localField: "_id",
+                foreignField: "orderId",
+                as: "orderItems",
+              },
             },
+    
             {
-                $lookup: {
-                    from: "products",
-                    localField: "orderItems.productId",
-                    foreignField: "_id",
-                    as: "productData",
-                },
+              $lookup: {
+                from: "products",
+                localField: "orderItems.productId",
+                foreignField: "_id",
+                as: "productData",
+              },
             },
           ])
           .exec();
-
-          console.log("memberId:", memberId);
-          console.log("matches:", matches);
-          
-          
-
-          if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
-          console.log("result:", result);
-          
-
+        if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
         return result;
-    }
+      }
 
     public async updateOrder(
         member: Member,
