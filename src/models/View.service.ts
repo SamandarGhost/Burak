@@ -20,7 +20,7 @@ class ViewService {
         try{
             return await  this.viewModel.create(input);
         } catch(err) {
-            console.log("ERROE, model: insertmemberView:", err);
+            console.log("ERROR, model: insertMemberView:", err);
             throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
         }
     }
