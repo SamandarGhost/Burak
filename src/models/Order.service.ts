@@ -94,6 +94,11 @@ class OrderService {
           ])
           .exec();
 
+          console.log("memberId:", memberId);
+          console.log("matches:", matches);
+          
+          
+
           if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
           console.log("result:", result);
           
