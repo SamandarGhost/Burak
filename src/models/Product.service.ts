@@ -15,19 +15,19 @@ class ProductService {
 
     constructor() {
         this.productModel = ProductModel;
-        this.viewService = ViewService;
+        this.viewService = new ViewService();
     }
-    /*SPA*/
-    public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
+    public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {        
         const match: T = { productStatus: ProductStatus.PROCESS };
 
         if(inquiry.productCollection)
             match.productCollection = inquiry.productCollection;
+
         if(inquiry.search) {
             match.productName = {$regex: new RegExp(inquiry.search, "i")};
-        }
+        }        
 
-        const sort: T = inquiry.order === "productPrice" ? { [inquiry.order]: 1 } : { [inquiry.order]: -1 };
+        const sort: T = inquiry.order === "productPrice" ? { [inquiry.order]: 1 } : { [inquiry.order]: -1 };        
 
         const result = await this.productModel
           .aggregate([
@@ -37,47 +37,45 @@ class ProductService {
             { $limit: inquiry.limit * 1 },
           ])
           .exec();
-        if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+        if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);        
 
         return result;
 
     }
 
-    public async getProduct(memberId: ObjectId | null, id: string): Promise<Product> {
+    public async getProduct(memberId: ObjectId | null, id: string): Promise<Product>{
         const productId = shapeIntoMongooseObjectId(id);
 
-        let result = await this.productModel.findOne({
-            _id: productId,
-            productStatus: ProductStatus.PROCESS,
-        }).exec();
+        let result = await this.productModel.findOne({_id: productId, productStatus: ProductStatus.PROCESS}).exec();
 
-        if(memberId) {
-            // check View Log Existence
+        if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+        if (memberId){
+            //Check view log existence
             const input: ViewInput = {
                 memberId: memberId,
                 viewRefId: productId,
-                viewGroup: ViewGroup.PRODUCT,
+                viewGroup: ViewGroup.PRODUCT, 
             };
             const existView = await this.viewService.checkViewExistence(input);
 
-            console.log("exist:", !!existView);
-            if(!existView) {
+            
+            if(!existView){
+                //Insert New View
+                console.log("PLANNING TO INSERT NEW VIEW");
                 await this.viewService.insertMemberView(input);
-            // Insert new View Log
+            
+                //Increase Counts
+                const result2 = await this.productModel.findByIdAndUpdate(productId, {$inc: {productViews: + 1}}, {new: true}).exec();
             }
-            // Increase Target View
-            const result2 = await this.productModel.findByIdAndUpdate(
-                productId, 
-                {$inc: { productViews: +1 }},
-                {new: true}
-            ).exec();
-        }
-        //TODO: if autenticated users => first => view log creation
 
-        if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+            
+        }
 
         return result;
     }
+    /*SPA*/
+
     
     /*SSR*/
 

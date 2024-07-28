@@ -6,7 +6,7 @@ export interface View {
     _id: ObjectId;
     viewGroup: ViewGroup;
     memberId: ObjectId;
-    viewrefId: ObjectId;
+    viewRefId: ObjectId;
     createdAt: Date;
     updatedAt: Date;
 }

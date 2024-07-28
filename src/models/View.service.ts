@@ -4,12 +4,6 @@ import ViewModel from "../schema/View.model";
 import { HttpCode } from "../libs/Errors";
 
 class ViewService {
-    static insertMemberView(input: ViewInput) {
-        throw new Error("Method not implemented.");
-    }
-    static checkViewExistence(input: ViewInput) {
-        throw new Error("Method not implemented.");
-    }
     private readonly viewModel;
 
     constructor() {
