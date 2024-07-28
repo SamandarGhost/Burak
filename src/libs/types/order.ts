@@ -6,7 +6,7 @@ export interface OrderItem {
     _id: ObjectId;
     itemQuantity: number;
     itemPrice: number;
-    orderId?: ObjectId;
+    orderId: ObjectId;
     productId: ObjectId;
     createdAt: Date;
     updatedAt: Date;
@@ -35,5 +35,10 @@ export interface OrderItemInput {
 export interface OrderInquiry {
     page: number;
     limit: number;
+    orderStatus: OrderStatus;
+}
+
+export interface OrderUpdateInput {
+    orderId: string;
     orderStatus: OrderStatus;
 }

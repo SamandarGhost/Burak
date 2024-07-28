@@ -1,9 +1,17 @@
-// MIT TASK - Y
-function findIntersection<T>(arr1: T[], arr2: T[]): T[] {
-  return arr1.filter(value => arr2.includes(value));
+// MIT TASK Z
+function sumEvens(arr: number[]): number {
+    return arr.filter(num => num % 2 === 0).reduce((a, b) => a + b, 0);
 }
 
-console.log(findIntersection([1,2,3], [3,2,0]));
+console.log(sumEvens([1, 2, 3])); 
+console.log(sumEvens([1, 2, 3, 4])); 
+
+// // MIT TASK - Y
+// function findIntersection<T>(arr1: T[], arr2: T[]): T[] {
+//   return arr1.filter(value => arr2.includes(value));
+// }
+
+// console.log(findIntersection([1,2,3], [3,2,0]));
 
 
 // // MIT TASK - X
