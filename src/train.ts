@@ -1,10 +1,16 @@
-// MIT TASK Z
-function sumEvens(arr: number[]): number {
-    return arr.filter(num => num % 2 === 0).reduce((a, b) => a + b, 0);
-}
+// MIT TASK - ZB
+function randomBetween(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  console.log(randomBetween(30, 50));
 
-console.log(sumEvens([1, 2, 3])); 
-console.log(sumEvens([1, 2, 3, 4])); 
+// // MIT TASK Z
+// function sumEvens(arr: number[]): number {
+//     return arr.filter(num => num % 2 === 0).reduce((a, b) => a + b, 0);
+// }
+
+// console.log(sumEvens([1, 2, 3])); 
+// console.log(sumEvens([1, 2, 3, 4])); 
 
 // // MIT TASK - Y
 // function findIntersection<T>(arr1: T[], arr2: T[]): T[] {
