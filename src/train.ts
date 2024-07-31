@@ -1,8 +1,16 @@
-// MIT TASK - ZB
-function randomBetween(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+// MIT TASK - ZC
+
+function Fahrenheit(selsiy: number): number {
+    return (selsiy * 9 / 5) + 32;
   }
-  console.log(randomBetween(30, 50));
+  
+  console.log(Fahrenheit(0));
+
+// // MIT TASK - ZB
+// function randomBetween(min: number, max: number): number {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+//   }
+//   console.log(randomBetween(30, 50));
 
 // // MIT TASK Z
 // function sumEvens(arr: number[]): number {
