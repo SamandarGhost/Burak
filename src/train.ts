@@ -1,10 +1,19 @@
-// MIT TASK - ZC
-
-function Fahrenheit(selsiy: number): number {
-    return (selsiy * 9 / 5) + 32;
+//  MIT TASK - ZD
+function TASKZD(a: number, b: number[], c: number) {
+    const d = [...b];
+    d[a] = c;
+    return d;
   }
   
-  console.log(Fahrenheit(0));
+  console.log(TASKZD(1, [1,3,7,2], 2));
+
+// // MIT TASK - ZC
+
+// function Fahrenheit(selsiy: number): number {
+//     return (selsiy * 9 / 5) + 32;
+//   }
+  
+//   console.log(Fahrenheit(0));
 
 // // MIT TASK - ZB
 // function randomBetween(min: number, max: number): number {
