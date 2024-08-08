@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(cors({
     credentials: true,
     origin: true,
-}))
+}));
 app.use(cookieParser());
 app.use(morgan(MORGAN_FORMAT));
 

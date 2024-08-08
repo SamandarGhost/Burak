@@ -1,11 +1,27 @@
-//  MIT TASK - ZD
-function TASKZD(a: number, b: number[], c: number) {
-    const d = [...b];
-    d[a] = c;
-    return d;
+//  MIT TASK - ZE
+function ikkiBolsaOchir(string: string): string {
+    let result = '';
+    
+    for (let i = 0; i < string.length; i++) {
+      if (result.indexOf(string[i]) === -1) {
+        result += string[i];
+      }
+    }
+    
+    return result;
   }
   
-  console.log(TASKZD(1, [1,3,7,2], 2));
+  // Test uchun misol
+  console.log(ikkiBolsaOchir('arralayotganda'));
+
+// //  MIT TASK - ZD
+// function TASKZD(a: number, b: number[], c: number) {
+//     const d = [...b];
+//     d[a] = c;
+//     return d;
+//   }
+  
+//   console.log(TASKZD(1, [1,3,7,2], 2));
 
 // // MIT TASK - ZC
 
