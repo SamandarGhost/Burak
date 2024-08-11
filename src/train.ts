@@ -1,17 +1,29 @@
-//  MIT TASK - ZE
-function ikkiBolsaOchir(string: string): string {
-    let result = '';
-    
-    for (let i = 0; i < string.length; i++) {
-      if (result.indexOf(string[i]) === -1) {
-        result += string[i];
-      }
+function cap(s: string): string {
+  return s.split(' ').map(w => {
+    if (w.length > 2) {
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    } else {
+      return w;
     }
+  }).join(' ');
+}
+
+console.log(cap('name should be a string'));
+
+// //  MIT TASK - ZE
+// function ikkiBolsaOchir(string: string): string {
+//     let result = '';
     
-    return result;
-  }
+//     for (let i = 0; i < string.length; i++) {
+//       if (result.indexOf(string[i]) === -1) {
+//         result += string[i];
+//       }
+//     }
+    
+//     return result;
+//   }
   
-  console.log(ikkiBolsaOchir('arralayotganda'));
+//   console.log(ikkiBolsaOchir('arralayotganda'));
 
 // //  MIT TASK - ZD
 // function TASKZD(a: number, b: number[], c: number) {
