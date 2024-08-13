@@ -1,14 +1,25 @@
-function cap(s: string): string {
-  return s.split(' ').map(w => {
-    if (w.length > 2) {
-      return w.charAt(0).toUpperCase() + w.slice(1);
-    } else {
-      return w;
-    }
-  }).join(' ');
+// ZG MIT TASK 
+function snakeCase(a: string): string {
+  return a
+    .toLowerCase()
+    .replace(/\s+/g, '_')
+    .replace(/[^a-z0-9_]/g, '');
 }
 
-console.log(cap('name should be a string'));
+console.log(snakeCase('assalamu alaykum mani ismim Samandar'));
+
+
+// function cap(s: string): string {
+//   return s.split(' ').map(w => {
+//     if (w.length > 2) {
+//       return w.charAt(0).toUpperCase() + w.slice(1);
+//     } else {
+//       return w;
+//     }
+//   }).join(' ');
+// }
+
+// console.log(cap('name should be a string'));
 
 // //  MIT TASK - ZE
 // function ikkiBolsaOchir(string: string): string {
