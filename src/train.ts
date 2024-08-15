@@ -1,12 +1,35 @@
-// ZG MIT TASK 
-function snakeCase(a: string): string {
-  return a
-    .toLowerCase()
-    .replace(/\s+/g, '_')
-    .replace(/[^a-z0-9_]/g, '');
-}
+//  MIT TASK - ZH
+function tushibQoldi(a: number[]): number[] {
+    let b = a[0];
+    for (let i = 1; i < a.length; i++) {
+      if (a[i] > b) {
+        b = a[i];
+      }
+    }
+  
+    const result: number[] = [];
+  
+    for (let i = 1; i <= b; i++) {
+      if (!a.includes(i)) {
+        result.push(i);
+      }
+    }
+  
+    return result;
+  }
 
-console.log(snakeCase('assalamu alaykum mani ismim Samandar'));
+  console.log(tushibQoldi([1, 2, 3, 5, 9, 13]));
+  
+
+// // ZG MIT TASK 
+// function snakeCase(a: string): string {
+//   return a
+//     .toLowerCase()
+//     .replace(/\s+/g, '_')
+//     .replace(/[^a-z0-9_]/g, '');
+// }
+
+// console.log(snakeCase('assalamu alaykum mani ismim Samandar'));
 
 
 // function cap(s: string): string {
