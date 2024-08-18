@@ -1,24 +1,35 @@
-//  MIT TASK - ZH
-function tushibQoldi(a: number[]): number[] {
-    let b = a[0];
-    for (let i = 1; i < a.length; i++) {
-      if (a[i] > b) {
-        b = a[i];
-      }
-    }
-  
-    const result: number[] = [];
-  
-    for (let i = 1; i <= b; i++) {
-      if (!a.includes(i)) {
-        result.push(i);
-      }
-    }
-  
-    return result;
-  }
+//  MIT TASK - ZI 
+function HelloWorld(a: string): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(a);
+    }, 3000);
+  });
+}
 
-  console.log(tushibQoldi([1, 2, 3, 5, 9, 13]));
+HelloWorld("Hello World").then((a) => console.log(a));
+
+// //  MIT TASK - ZH
+// function tushibQoldi(a: number[]): number[] {
+//     let b = a[0];
+//     for (let i = 1; i < a.length; i++) {
+//       if (a[i] > b) {
+//         b = a[i];
+//       }
+//     }
+  
+//     const result: number[] = [];
+  
+//     for (let i = 1; i <= b; i++) {
+//       if (!a.includes(i)) {
+//         result.push(i);
+//       }
+//     }
+  
+//     return result;
+//   }
+
+//   console.log(tushibQoldi([1, 2, 3, 5, 9, 13]));
   
 
 // // ZG MIT TASK 
