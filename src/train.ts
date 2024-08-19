@@ -1,13 +1,29 @@
-//  MIT TASK - ZI 
-function HelloWorld(a: string): Promise<string> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(a);
-    }, 3000);
-  });
+// MIT TASK - ZJ
+function nestedArray(arr: (number | (number | any[])[])[]): number {
+  let a = 0;
+  for (const element of arr) {
+    if (Array.isArray(element)) {
+      a += nestedArray(element);
+    } else {
+      a += element;
+    }
+  }
+  return a;
 }
 
-HelloWorld("Hello World").then((a) => console.log(a));
+console.log(nestedArray([1, [1, 4, [6]]]));
+
+
+// //  MIT TASK - ZI 
+// function HelloWorld(a: string): Promise<string> {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(a);
+//     }, 3000);
+//   });
+// }
+
+// HelloWorld("Hello World").then((a) => console.log(a));
 
 // //  MIT TASK - ZH
 // function tushibQoldi(a: number[]): number[] {
