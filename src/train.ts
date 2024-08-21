@@ -1,17 +1,31 @@
-// MIT TASK - ZJ
-function nestedArray(arr: (number | (number | any[])[])[]): number {
-  let a = 0;
-  for (const element of arr) {
-    if (Array.isArray(element)) {
-      a += nestedArray(element);
-    } else {
-      a += element;
+// MIT TASk - ZK
+function beshSoniya(): void {
+  let i = 0;
+  const aylanish = setInterval(() => {
+    console.log(i + 1);
+    i++;
+    if (i >= 5) {
+      clearInterval(aylanish);
     }
-  }
-  return a;
+  }, 1000);
 }
 
-console.log(nestedArray([1, [1, 4, [6]]]));
+beshSoniya();
+
+// // MIT TASK - ZJ
+// function nestedArray(arr: (number | (number | any[])[])[]): number {
+//   let a = 0;
+//   for (const element of arr) {
+//     if (Array.isArray(element)) {
+//       a += nestedArray(element);
+//     } else {
+//       a += element;
+//     }
+//   }
+//   return a;
+// }
+
+// console.log(nestedArray([1, [1, 4, [6]]]));
 
 
 // //  MIT TASK - ZI 
