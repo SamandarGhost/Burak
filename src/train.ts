@@ -1,16 +1,29 @@
-// MIT TASk - ZK
-function beshSoniya(): void {
-  let i = 0;
-  const aylanish = setInterval(() => {
-    console.log(i + 1);
-    i++;
-    if (i >= 5) {
-      clearInterval(aylanish);
-    }
-  }, 1000);
+// MIT TASK - Zl
+
+function kebabCase(a: string): string {
+  return a
+    .toLowerCase()
+    .replace(/\s+/g, '-') 
+    .replace(/[^a-z0-9-]/g, ''); 
 }
 
-beshSoniya();
+console.log(kebabCase("I love Kebab and I adore Burak Kebabs"));
+
+
+
+// // MIT TASk - ZK
+// function beshSoniya(): void {
+//   let i = 0;
+//   const aylanish = setInterval(() => {
+//     console.log(i + 1);
+//     i++;
+//     if (i >= 5) {
+//       clearInterval(aylanish);
+//     }
+//   }, 1000);
+// }
+
+// beshSoniya();
 
 // // MIT TASK - ZJ
 // function nestedArray(arr: (number | (number | any[])[])[]): number {
