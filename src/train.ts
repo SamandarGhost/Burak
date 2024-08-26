@@ -1,13 +1,20 @@
-// MIT TASK - Zl
+// MIT TASK - ZM
+function aylantir(a: number): string {
+    return a.toString().split('').reverse().join('');
+  };
 
-function kebabCase(a: string): string {
-  return a
-    .toLowerCase()
-    .replace(/\s+/g, '-') 
-    .replace(/[^a-z0-9-]/g, ''); 
-}
+  console.log(aylantir(12345678910111214));
 
-console.log(kebabCase("I love Kebab and I adore Burak Kebabs"));
+// // MIT TASK - Zl
+
+// function kebabCase(a: string): string {
+//   return a
+//     .toLowerCase()
+//     .replace(/\s+/g, '-') 
+//     .replace(/[^a-z0-9-]/g, ''); 
+// }
+
+// console.log(kebabCase("I love Kebab and I adore Burak Kebabs"));
 
 
 
