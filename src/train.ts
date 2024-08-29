@@ -1,9 +1,17 @@
-// MIT TASK - ZM
-function aylantir(a: number): string {
-    return a.toString().split('').reverse().join('');
-  };
+// MIT TASK - ZN
+function rotate(a: number[], num: number): number[] {
+  const rot = [...a.slice(-num), ...a.slice(0, a.length - num)];
+  return rot;
+}
 
-  console.log(aylantir(12345678910111214));
+console.log(rotate([1, 2, 3, 4, 5, 6], 3));
+
+// MIT TASK - ZM
+// function aylantir(a: number): string {
+//     return a.toString().split('').reverse().join('');
+//   };
+
+//   console.log(aylantir(12345678910111214));
 
 // // MIT TASK - Zl
 
