@@ -1,10 +1,29 @@
-// MIT TASK - ZN
-function rotate(a: number[], num: number): number[] {
-  const rot = [...a.slice(-num), ...a.slice(0, a.length - num)];
-  return rot;
-}
+// MIT TASK - ZO
+function Balance(a: string): boolean {
+    let b = 0;
+    let c = 0;
+  
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] === '(') {
+        b++;
+      } else if (a[i] === ')') {
+        c++;
+      }
+    }
+  
+    return b === c;
+  }
+  
+  console.log(Balance("sam()(qavs)balance()ichida"));
+  console.log(Balance("()string(qavs(ichida)balance"));
 
-console.log(rotate([1, 2, 3, 4, 5, 6], 3));
+// // MIT TASK - ZN
+// function rotate(a: number[], num: number): number[] {
+//   const rot = [...a.slice(-num), ...a.slice(0, a.length - num)];
+//   return rot;
+// }
+
+// console.log(rotate([1, 2, 3, 4, 5, 6], 3));
 
 // MIT TASK - ZM
 // function aylantir(a: number): string {
