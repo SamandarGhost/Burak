@@ -1,21 +1,38 @@
-// MIT TASK - ZO
-function Balance(a: string): boolean {
-    let b = 0;
-    let c = 0;
-  
-    for (let i = 0; i < a.length; i++) {
-      if (a[i] === '(') {
-        b++;
-      } else if (a[i] === ')') {
-        c++;
-      }
+// MIT TASK - ZP
+function nusxaQidir(a: number[]): number[] {
+  const nusxa: number[] = [];
+  const qidir: number[] = [];
+
+  a.forEach((b) => {
+    if (qidir.includes(b) && !nusxa.includes(b)) {
+      nusxa.push(b);
     }
+    qidir.push(b);
+  });
+
+  return nusxa;
+}
+
+console.log(nusxaQidir([1, 2, 3, 12, 13, 12, 13, 7, 9, 7, 4, 5, 4, 3, 4]));
+
+// // MIT TASK - ZO
+// function Balance(a: string): boolean {
+//     let b = 0;
+//     let c = 0;
   
-    return b === c;
-  }
+//     for (let i = 0; i < a.length; i++) {
+//       if (a[i] === '(') {
+//         b++;
+//       } else if (a[i] === ')') {
+//         c++;
+//       }
+//     }
   
-  console.log(Balance("sam()(qavs)balance()ichida"));
-  console.log(Balance("()string(qavs(ichida)balance"));
+//     return b === c;
+//   }
+  
+//   console.log(Balance("sam()(qavs)balance()ichida"));
+//   console.log(Balance("()string(qavs(ichida)balance"));
 
 // // MIT TASK - ZN
 // function rotate(a: number[], num: number): number[] {
