@@ -1,19 +1,37 @@
-// MIT TASK - ZP
-function nusxaQidir(a: number[]): number[] {
-  const nusxa: number[] = [];
-  const qidir: number[] = [];
+// MIT TASK - ZQ
+function counter(str: string): { number: number, letter: number } {
+  let a = 0;
+  let b = 0;
 
-  a.forEach((b) => {
-    if (qidir.includes(b) && !nusxa.includes(b)) {
-      nusxa.push(b);
+  for (let char of str) {
+    if (!isNaN(Number(char))) {
+      a++;
+    } else if (char.match(/[a-zA-Z]/)) {
+      b++;
     }
-    qidir.push(b);
-  });
+  }
 
-  return nusxa;
+  return { number: a, letter: b };
 }
 
-console.log(nusxaQidir([1, 2, 3, 12, 13, 12, 13, 7, 9, 7, 4, 5, 4, 3, 4]));
+console.log(counter("string152%¥^$&^$&%@$#*^$@!@#$%^12345323fdgghfdsgh"));
+
+// // MIT TASK - ZP
+// function nusxaQidir(a: number[]): number[] {
+//   const nusxa: number[] = [];
+//   const qidir: number[] = [];
+
+//   a.forEach((b) => {
+//     if (qidir.includes(b) && !nusxa.includes(b)) {
+//       nusxa.push(b);
+//     }
+//     qidir.push(b);
+//   });
+
+//   return nusxa;
+// }
+
+// console.log(nusxaQidir([1, 2, 3, 12, 13, 12, 13, 7, 9, 7, 4, 5, 4, 3, 4]));
 
 // // MIT TASK - ZO
 // function Balance(a: string): boolean {
