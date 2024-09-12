@@ -1,20 +1,46 @@
-// MIT TASK - ZQ
-function counter(str: string): { number: number, letter: number } {
-  let a = 0;
-  let b = 0;
+// MIT TASK - ZS
+function birinchi(str: string): number {
+  const charCount: { [key: string]: number } = {};
 
-  for (let char of str) {
-    if (!isNaN(Number(char))) {
-      a++;
-    } else if (char.match(/[a-zA-Z]/)) {
-      b++;
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (charCount[char]) {
+      charCount[char]++;
+    } else {
+      charCount[char] = 1;
     }
   }
 
-  return { number: a, letter: b };
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (charCount[char] === 1) {
+      return i;
+    }
+  }
+
+  return -1;
 }
 
-console.log(counter("string152%¥^$&^$&%@$#*^$@!@#$%^12345323fdgghfdsgh"));
+console.log(birinchi("aabbc"));
+
+
+// // MIT TASK - ZQ
+// function counter(str: string): { number: number, letter: number } {
+//   let a = 0;
+//   let b = 0;
+
+//   for (let char of str) {
+//     if (!isNaN(Number(char))) {
+//       a++;
+//     } else if (char.match(/[a-zA-Z]/)) {
+//       b++;
+//     }
+//   }
+
+//   return { number: a, letter: b };
+// }
+
+// console.log(counter("string152%¥^$&^$&%@$#*^$@!@#$%^12345323fdgghfdsgh"));
 
 // // MIT TASK - ZP
 // function nusxaQidir(a: number[]): number[] {
