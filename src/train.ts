@@ -1,27 +1,49 @@
-// MIT TASK - ZS
-function birinchi(str: string): number {
-  const charCount: { [key: string]: number } = {};
+// MIT TASK - ZT
 
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (charCount[char]) {
-      charCount[char]++;
-    } else {
-      charCount[char] = 1;
-    }
+function yagonaSon(a: number[]): number {
+  const b: { [key: number]: number } = {};
+
+  a.forEach(a => {
+      b[a] = (b[a] || 0) + 1;
+  });
+
+  let c = 0;
+  for (const num in b) {
+      if (b[num] === 1) {
+          c += Number(num);
+      }
   }
 
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (charCount[char] === 1) {
-      return i;
-    }
-  }
-
-  return -1;
+  return c;
 }
 
-console.log(birinchi("aabbc"));
+console.log(yagonaSon([1, 2, 3, 2, 5]));
+
+
+// // MIT TASK - ZS
+// function birinchi(str: string): number {
+//   const charCount: { [key: string]: number } = {};
+
+//   for (let i = 0; i < str.length; i++) {
+//     const char = str[i];
+//     if (charCount[char]) {
+//       charCount[char]++;
+//     } else {
+//       charCount[char] = 1;
+//     }
+//   }
+
+//   for (let i = 0; i < str.length; i++) {
+//     const char = str[i];
+//     if (charCount[char] === 1) {
+//       return i;
+//     }
+//   }
+
+//   return -1;
+// }
+
+// console.log(birinchi("aabbc"));
 
 
 // // MIT TASK - ZQ
