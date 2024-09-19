@@ -1,23 +1,33 @@
-// MIT TASK - ZT
-
-function yagonaSon(a: number[]): number {
-  const b: { [key: number]: number } = {};
-
-  a.forEach(a => {
-      b[a] = (b[a] || 0) + 1;
-  });
-
-  let c = 0;
-  for (const num in b) {
-      if (b[num] === 1) {
-          c += Number(num);
-      }
+// MIT TASK ZU
+function tengmi(a: number[], b: number[]): boolean {
+    const bir = a.slice().sort((a, b) => a - b);
+    const ikki = b.slice().sort((a, b) => a - b);
+    return JSON.stringify(bir) === JSON.stringify(ikki);
   }
 
-  return c;
-}
+console.log(tengmi([1, 2, 7, 3, 11], [3, 1, 2, 12])); 
+console.log(tengmi([1, 2, 6, 1, 3], [3, 1, 2, 1, 6])); 
 
-console.log(yagonaSon([1, 2, 3, 2, 5]));
+// // MIT TASK - ZT
+
+// function yagonaSon(a: number[]): number {
+//   const b: { [key: number]: number } = {};
+
+//   a.forEach(a => {
+//       b[a] = (b[a] || 0) + 1;
+//   });
+
+//   let c = 0;
+//   for (const num in b) {
+//       if (b[num] === 1) {
+//           c += Number(num);
+//       }
+//   }
+
+//   return c;
+// }
+
+// console.log(yagonaSon([1, 2, 3, 2, 5]));
 
 
 // // MIT TASK - ZS
